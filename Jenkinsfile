@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './gradlew clean test'
+        sh '''cd todomvc-e2e
+./gradlew clean test'''
       }
     }
   }
