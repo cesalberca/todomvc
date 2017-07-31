@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="8" skipped="0" failures="0" errors="0" time="23.031" hostname="macbook-calberca.local" timestamp="2017-07-31T13:02:27">
+<properties>
+<property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.encoding.pkg" value="sun.io"/>
+<property name="file.separator" value="/"/>
+<property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|localhost|*.localhost|127.0.0.0/8|*.127.0.0.0/8"/>
+<property name="gopherProxySet" value="false"/>
+<property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|localhost|*.localhost|127.0.0.0/8|*.127.0.0.0/8"/>
+<property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+<property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+<property name="java.class.path" value="/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/classes/java/test:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/resources/test:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/classes/java/main:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/resources/main:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-support/3.4.0/900176a308fbf55d741a168a3beac8527caf1c1/selenium-support-3.4.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-chrome-driver/3.4.0/5a3533c1ec2ba883beb0314dacf7ff932163a4ef/selenium-chrome-driver-3.4.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-firefox-driver/3.4.0/d88e50771a0c978502dfdf770d3192c7643928eb/selenium-firefox-driver-3.4.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-runner/1.0.0-M4/8e7235e28eda64f8216c0c055bd881f07e46e1b9/junit-platform-runner-1.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.0.0-M4/10e0dc41a4e9c1817c2b729c3a7c48b1ddfed17/junit-jupiter-engine-5.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.0.0-M4/50f95d68c674a30374c5f50e6ad5212d2c1a3cec/junit-jupiter-api-5.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.0.0-M4/d4e3657bc7cf204d6b9b55f0387fedc6eaad55fa/junit-platform-launcher-1.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-remote-driver/3.4.0/2593094fccb4f0317e211674ebfc22fb049c043a/selenium-remote-driver-3.4.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/3.4.0/bf91d238e6eb07f8496ccb61e12e2c868d2bc7e9/selenium-api-3.4.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/cglib/cglib-nodep/3.2.4/42c972dee25a436b32c6027e848287ff47ed6750/cglib-nodep-3.2.4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.3/8dfb9facd0830a27b1b5f29f84593f0aeee7773b/commons-exec-1.3.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/d1577ae15f01ef5438c5afc62162457c00a34713/httpclient-4.5.3.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/21.0/3a3d111be1be1b745edfa7d91678a12d7ed38709/guava-21.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/e3fd8ced1f52c7574af952e2e6da0df8df08eb82/httpcore-4.4.6.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/4.1.0/23457ad1cf75c2c16763330de5565a0e67b4bc0a/jna-platform-4.1.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.1.0/1c12d070e602efd8021891cdd7fd18bc129372d4/jna-4.1.0.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.0.0-M4/5e65bdd2d623dfc6a405911a6449f2c60808b0af/junit-platform-engine-1.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.0.0-M2/e2caa64702a83336d3dd32c7f69c1f092156df6d/opentest4j-1.0.0-M2.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-suite-api/1.0.0-M4/b68868db955435ca2e2900f5590879463ceb2a72/junit-platform-suite-api-1.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.0.0-M4/359eb461814bd7356de541d131d45473d394a168/junit-platform-commons-1.0.0-M4.jar:/Users/calberca/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-console/1.0.0-M4/82da9da502b1fe187bed5f5152746696aad19fae/junit-platform-console-1.0.0-M4.jar"/>
+<property name="java.class.version" value="52.0"/>
+<property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/endorsed"/>
+<property name="java.ext.dirs" value="/Users/calberca/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+<property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre"/>
+<property name="java.io.tmpdir" value="/var/folders/d_/h3dx0rn96mv0_lnp_rnkxc1m0000gp/T/"/>
+<property name="java.library.path" value="/Users/calberca/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+<property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+<property name="java.runtime.version" value="1.8.0_144-b01"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="1.8"/>
+<property name="java.vendor" value="Oracle Corporation"/>
+<property name="java.vendor.url" value="http://java.oracle.com/"/>
+<property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+<property name="java.version" value="1.8.0_144"/>
+<property name="java.vm.info" value="mixed mode"/>
+<property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="1.8"/>
+<property name="java.vm.vendor" value="Oracle Corporation"/>
+<property name="java.vm.version" value="25.144-b01"/>
+<property name="line.separator" value="
+"/>
+<property name="os.arch" value="x86_64"/>
+<property name="os.name" value="Mac OS X"/>
+<property name="os.version" value="10.12.6"/>
+<property name="path.separator" value=":"/>
+<property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|localhost|*.localhost|127.0.0.0/8|*.127.0.0.0/8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/classes"/>
+<property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.cpu.isalist" value=""/>
+<property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+<property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --details NONE --scan-class-path /Users/calberca/Workspace/autentia-training/selenium/todomvc/build/classes/java/main:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/resources/main:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/classes/java/test:/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/resources/test -n ^.*Tests?$ --reports-dir /Users/calberca/Workspace/autentia-training/selenium/todomvc/build/test-results/junit-platform"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="sun.os.patch.level" value="unknown"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/Users/calberca/Workspace/autentia-training/selenium/todomvc"/>
+<property name="user.home" value="/Users/calberca"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="calberca"/>
+<property name="user.timezone" value="Europe/Madrid"/>
+<property name="user.variant" value=""/>
+<property name="webdriver.chrome.driver" value="/Users/calberca/Workspace/autentia-training/selenium/todomvc/build/resources/test/chromedriver"/>
+</properties>
+<testcase name="testLoadingCapabilities()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="4.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testLoadingCapabilities()]
+display-name: it should load the page correctly
+]]></system-out>
+</testcase>
+<testcase name="testCreateTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="2.242">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testCreateTodo()]
+display-name: it should create a new todo
+]]></system-out>
+</testcase>
+<testcase name="testEditTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="2.847">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testEditTodo()]
+display-name: it should edit an already created todo
+]]></system-out>
+</testcase>
+<testcase name="testDeleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="2.854">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testDeleteTodo()]
+display-name: it should delete a given todo
+]]></system-out>
+</testcase>
+<testcase name="testCompleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="2.853">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testCompleteTodo()]
+display-name: it should complete a given tddo
+]]></system-out>
+</testcase>
+<testcase name="testClearCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="2.67">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testClearCompletedTodos()]
+display-name: it should clear completed todos
+]]></system-out>
+</testcase>
+<testcase name="testFilterActiveTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="2.744">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[nested-class:FilterTodosTest]/[method:testFilterActiveTodos()]
+display-name: it should filter active todos
+]]></system-out>
+</testcase>
+<testcase name="testFilterCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="2.74">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[nested-class:FilterTodosTest]/[method:testFilterCompletedTodos()]
+display-name: it should filter completed todos
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>
