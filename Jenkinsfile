@@ -1,9 +1,22 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:8.2.1'
+    }
+    
+  }
   stages {
+    stage('Initialize') {
+      steps {
+        sh '''node -v
+npm -v'''
+      }
+    }
     stage('Build') {
       steps {
-        echo 'Hi'
+        sh '''cd ./src/webapp/
+npm install
+npm start'''
       }
     }
   }
