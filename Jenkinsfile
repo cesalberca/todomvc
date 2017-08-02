@@ -6,8 +6,6 @@ pipeline {
     stage('Initialize') {
       steps {
         nodejs(nodeJSInstallationName: 'node:8.2.1') {
-          deleteDir()
-          checkout scm
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
@@ -22,7 +20,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'ls'
+        sh 'lsof -i tcp:3000'
         sh './gradlew clean test'
       }
     }
