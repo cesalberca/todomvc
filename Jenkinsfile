@@ -1,10 +1,17 @@
 pipeline {
-  agent any
-  stages {
-    stage('test') {
-      steps {
-        echo 'test sds'
-      }
+  node {
+    stages {
+        stage('Initialize') {
+            steps {
+                sh 'npm -v'
+                sh 'node -v'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh './gradlew test'
+            }
+        }
     }
   }
 }
