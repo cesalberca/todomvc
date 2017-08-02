@@ -8,6 +8,7 @@ pipeline {
           sh 'npm -v'
           sh 'node -v'
           sh 'cd src/webapp/'
+          sh 'ls'
           sh 'npm start'
         }
       }
