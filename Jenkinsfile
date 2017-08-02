@@ -9,7 +9,7 @@ pipeline {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
-
+          
           dir('src/webapp') {
             sh 'ls'
             sh 'npm install'
