@@ -5,8 +5,8 @@ pipeline {
       agent {
         label 'node-server'
       }
-      nodejs(nodeJSInstallationName: 'node:8.2.1') {
-        steps {
+      steps {
+        nodejs(nodeJSInstallationName: 'node:8.2.1') {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
