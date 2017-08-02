@@ -21,6 +21,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'ls'
+        sh './gradlew tasks'
         sh './gradlew clean test'
       }
     }
