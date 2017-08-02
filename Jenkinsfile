@@ -1,10 +1,11 @@
+node {
+  env.NODEJS_HOME = "${tool 'Node 6.x'}"
+  env.PATH="${env.NODEJS_HOME}:${env.PATH}"
+  sh 'npm -v'
+}
+
 pipeline {
   agent any
-  node {
-    env.NODEJS_HOME = "${tool 'Node 6.x'}"
-    env.PATH="${env.NODEJS_HOME}:${env.PATH}"
-    sh 'npm -v'
-  }
   stages {
     stage('Initialize') {
       steps {
