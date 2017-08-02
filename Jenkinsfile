@@ -1,11 +1,9 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Initialize') {
       agent {
-        node {
-          label 'node-server'
-        }
+        label 'node-server'
       }
       nodejs(nodeJSInstallationName: 'node:8.2.1') {
         steps {
@@ -23,9 +21,7 @@ pipeline {
     }
     stage('Test') {
       agent {
-        node {
-          label 'selenium-test-server'
-        }
+        label 'selenium-test-server'
       }
       steps {
         echo 'hi'
