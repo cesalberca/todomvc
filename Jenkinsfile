@@ -1,15 +1,9 @@
-node {
-  env.NODEJS_HOME = "${tool 'Node 6.x'}"
-  env.PATH="${env.NODEJS_HOME}:${env.PATH}"
-  sh 'npm -v'
-}
-
 pipeline {
   agent any
-  stages {
-    stage('Initialize') {
-      steps {
-        nodejs(nodeJSInstallationName: 'node:8.2.1') {
+  nodejs(nodeJSInstallationName: 'node:8.2.1') {
+    stages {
+      stage('Initialize') {
+        steps {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
@@ -21,10 +15,10 @@ pipeline {
           }
         }
       }
-    }
-    stage('Build') {
-      steps {
-        sh './gradlew clean test'
+      stage('Build') {
+        steps {
+          sh './gradlew clean test'
+        }
       }
     }
   }
