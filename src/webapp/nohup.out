@@ -1,0 +1,15 @@
+
+> todomvc@0.0.0 start /Users/calberca/Workspace/todomvc/src/webapp
+> node ./bin/www
+
+Port 3000 is already in use
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! todomvc@0.0.0 start: `node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the todomvc@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/calberca/.npm/_logs/2017-08-02T11_14_38_142Z-debug.log
