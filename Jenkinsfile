@@ -1,10 +1,27 @@
+#!groovy
+
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Initialize') {
       steps {
-        sh '''cd todomvc-e2e
-./gradlew clean test'''
+        nodejs(nodeJSInstallationName: 'node:8.2.1') {
+          sh 'echo $PATH'
+          sh 'npm -v'
+          sh 'node -v'
+
+          dir('src/webapp') {
+            sh 'ls'
+            sh 'npm install'
+            sh 'npm start &'
+          }
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'ls'
+        sh './gradlew clean test'
       }
     }
   }

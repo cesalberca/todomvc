@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/todomvc.iml" filepath="$PROJECT_DIR$/todomvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/todomvc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/todomvc_main.iml" group="todomvc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/todomvc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/todomvc_test.iml" group="todomvc" />
+      <module fileurl="file://$PROJECT_DIR$/src/webapp/webapp.iml" filepath="$PROJECT_DIR$/src/webapp/webapp.iml" />
+    </modules>
+  </component>
+</project>
