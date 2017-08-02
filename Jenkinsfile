@@ -3,8 +3,11 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        sh 'echo $PATH'
-        sh 'npm -v'
+        nodejs(nodeJSInstallationName: 'node:8.2.1') {
+          sh 'echo $PATH'
+          sh 'npm -v'
+          sh 'node -v'
+        }
         sh 'node -v'
       }
     }
