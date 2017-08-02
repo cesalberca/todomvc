@@ -11,14 +11,15 @@ pipeline {
           dir('src/webapp') {
             sh 'ls'
             sh 'npm install'
-            sh 'nohup npm start &'
+            sh 'npm start &'
           }
         }
       }
     }
     stage('Test') {
       steps {
-        echo 'hi'
+        sh 'ls'
+        sh './gradlew clean test'
       }
     }
   }
