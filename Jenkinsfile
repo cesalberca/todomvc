@@ -7,13 +7,14 @@ pipeline {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
+          sh 'cd src/webapp/'
+          sh 'npm start'
         }
-        sh 'node -v'
       }
     }
     stage('Build') {
       steps {
-        sh './gradlew test'
+        sh './gradlew clean test'
       }
     }
   }
