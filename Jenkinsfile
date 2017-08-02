@@ -9,7 +9,7 @@ pipeline {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
-          
+
           dir('src/webapp') {
             sh 'ls'
             sh 'npm install'
@@ -21,7 +21,6 @@ pipeline {
     stage('Test') {
       steps {
         sh 'ls'
-        sh './gradlew tasks'
         sh './gradlew clean test'
       }
     }
