@@ -6,6 +6,7 @@ pipeline {
     stage('Initialize') {
       steps {
         nodejs(nodeJSInstallationName: 'node:8.2.1') {
+          deleteDir()
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
