@@ -1,8 +1,13 @@
 pipeline {
   agent any
-  nodejs(nodeJSInstallationName: 'node:8.2.1') {
-    stages {
-      stage('Initialize') {
+  stages {
+    stage('Initialize') {
+      agent {
+        node {
+          label 'node-server'
+        }
+      }
+      nodejs(nodeJSInstallationName: 'node:8.2.1') {
         steps {
           sh 'echo $PATH'
           sh 'npm -v'
@@ -15,10 +20,15 @@ pipeline {
           }
         }
       }
-      stage('Build') {
-        steps {
-          sh './gradlew clean test'
+    }
+    stage('Test') {
+      agent {
+        node {
+          label 'selenium-test-server'
         }
+      }
+      steps {
+        echo 'hi'
       }
     }
   }
