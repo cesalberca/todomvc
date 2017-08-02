@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        echo '$PATH'
+        sh 'echo $PATH'
         sh 'npm -v'
         sh 'node -v'
       }
