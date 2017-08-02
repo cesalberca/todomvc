@@ -20,7 +20,8 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh('lsof -i tcp:3000', returnStatus: true)
+        def output = sh('lsof -i tcp:3000', returnStatus: true)
+        echo output
         sh './gradlew clean test'
       }
     }
