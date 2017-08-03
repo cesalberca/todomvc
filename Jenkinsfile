@@ -14,8 +14,9 @@ pipeline {
             sh 'ls'
             sh 'npm install'
             sh 'npm start &'
-            sh './gradlew clean test'
           }
+          
+          sh './gradlew clean test'
         }
       }
     }
