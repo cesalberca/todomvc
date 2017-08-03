@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies. Hi
+ * Module dependencies.
  */
 
 var app = require('../app');
@@ -14,6 +14,7 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+console.log(port)
 
 /**
  * Create HTTP server.
