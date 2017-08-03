@@ -3,7 +3,7 @@
 pipeline {
   agent any
   stages {
-    stage('Initialize') {
+    stage('Test') {
       steps {
         nodejs(nodeJSInstallationName: 'node:8.2.0') {
           sh 'echo $PATH'
@@ -14,13 +14,13 @@ pipeline {
             sh 'ls'
             sh 'npm install'
             sh 'npm start &'
+            sh './gradlew clean test'
           }
         }
       }
     }
-    stage('Test') {
+    stage('Clean up') {
       steps {
-        sh './gradlew clean test'
         deleteDir()
       }
     }

@@ -34,6 +34,7 @@ class TodoMvcFlowTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("it should create a new todo")
     void testCreateTodo() {
         flow.createTodo("foo");
@@ -42,6 +43,7 @@ class TodoMvcFlowTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("it should edit an already created todo")
     void testEditTodo() {
         // Does not work on Firefox 53 due to an error implemented on geckodriver regarding dbclick event not firing
@@ -54,6 +56,7 @@ class TodoMvcFlowTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("it should delete a given todo")
     void testDeleteTodo() {
         flow.createTodo("foo");
@@ -63,7 +66,8 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @DisplayName("it should complete a given tddo ")
+    @Disabled
+    @DisplayName("it should complete a given todo ")
     void testCompleteTodo() {
         flow.createTodo("foo");
         flow.createTodo("bar");
@@ -78,6 +82,7 @@ class TodoMvcFlowTest {
     class FilterTodosTest {
 
         @Test
+        @Disabled
         @DisplayName("it should filter active todos")
         void testFilterActiveTodos() {
             flow.createTodo("foo");
@@ -90,6 +95,7 @@ class TodoMvcFlowTest {
         }
 
         @Test
+        @Disabled
         @DisplayName("it should filter completed todos")
         void testFilterCompletedTodos() {
             flow.createTodo("foo");
@@ -104,6 +110,7 @@ class TodoMvcFlowTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("it should clear completed todos")
     void testClearCompletedTodos() {
         flow.createTodo("foo");
