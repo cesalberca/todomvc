@@ -9,10 +9,11 @@ pipeline {
                 sh 'npm -v'
                 sh 'node -v'
 
-            dir('src/webapp') {
-                sh 'ls'
-                sh 'npm install'
-                sh 'nohup npm start &'
+	            dir('src/webapp') {
+		        sh 'ls'
+		        sh 'npm install'
+                        sh 'nohup npm start &'
+		}
             }
         }
     }
