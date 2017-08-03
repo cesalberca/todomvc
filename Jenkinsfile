@@ -13,9 +13,9 @@ pipeline {
           dir('src/webapp') {
             sh 'ls'
             sh 'npm install'
-            sh 'npm start &'
+            sh 'nohup npm start &'
           }
-          
+
           sh './gradlew clean test'
         }
       }
