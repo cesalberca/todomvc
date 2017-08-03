@@ -9,7 +9,7 @@ pipeline {
           sh 'echo $PATH'
           sh 'npm -v'
           sh 'node -v'
-          sh 'npm cache clear'
+          sh 'npm cache clear --force'
 
           dir('src/webapp') {
             sh 'ls'
