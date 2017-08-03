@@ -1,7 +1,7 @@
 package com.autentia.training.selenium.todomvc.main;
 
 import com.autentia.training.selenium.todomvc.drivers.Browser;
-import com.autentia.training.selenium.todomvc.drivers.Firefox;
+import com.autentia.training.selenium.todomvc.drivers.Chrome;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 
@@ -15,7 +15,7 @@ class TodoMvcFlowTest {
     @BeforeEach
     void setUp() {
         // Don't try with Firefox as for the moment doubleClick event is not implemented correctly, causing the edit to do test to fail
-        final Browser browser = new Firefox();
+        final Browser browser = new Chrome();
         final WebDriver driver = browser.getDriver();
 
         page = new TodoMvcPage(driver);
