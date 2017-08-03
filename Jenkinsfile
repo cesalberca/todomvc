@@ -5,7 +5,6 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        deleteDir()
         nodejs(nodeJSInstallationName: 'node:8.2.0') {
           sh 'echo $PATH'
           sh 'npm -v'
@@ -22,6 +21,7 @@ pipeline {
     stage('Test') {
       steps {
         sh './gradlew clean test'
+        deleteDir()
       }
     }
   }
