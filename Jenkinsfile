@@ -5,14 +5,16 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        sh 'echo $PATH'
-        sh 'npm -v'
-        sh 'node -v'
+        nodejs(nodeJSInstallationName: 'node:8.2.0') {
+          sh 'echo $PATH'
+          sh 'npm -v'
+          sh 'node -v'
 
-        dir('src/webapp') {
-          sh 'ls'
-          sh 'npm install --no-bin-links'
-          sh 'nohup npm start &'
+          dir('src/webapp') {
+            sh 'ls'
+            sh 'npm install'
+            sh 'nohup npm start &'
+          }
         }
       }
     }
