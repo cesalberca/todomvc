@@ -13,7 +13,7 @@ pipeline {
           dir('src/webapp') {
             sh 'ls'
             sh 'npm install'
-            sh 'npm start'
+            sh 'npm start &'
           }
         }
       }
