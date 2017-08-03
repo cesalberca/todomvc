@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('main:server');
 var http = require('http');
+var ip = require("ip");
 
 /**
  * Get port from environment and store in Express.
@@ -29,6 +30,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.dir(ip.address());
 
 /**
  * Normalize a port into a number, string, or false.
@@ -84,6 +86,7 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
+  console.log(addr)
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;

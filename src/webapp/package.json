@@ -11,6 +11,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "hbs": "~4.0.1",
+    "ip": "^1.1.5",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "todomvc-app-css": "^2.1.0",
