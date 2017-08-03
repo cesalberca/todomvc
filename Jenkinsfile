@@ -11,7 +11,7 @@ pipeline {
 
         dir('src/webapp') {
           sh 'ls'
-          sh 'npm install'
+          sh 'npm install --no-bin-links'
           sh 'nohup npm start &'
         }
       }
