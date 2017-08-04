@@ -19,7 +19,7 @@ class TodoMvcFlowTest {
     void setUp() throws MalformedURLException {
         // Don't try with Firefox as for the moment doubleClick event is not implemented correctly, causing the edit to do test to fail
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        final WebDriver driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities);
+        final WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
 
         page = new TodoMvcPage(driver);
         flow = new TodoMvcFlow(page);
