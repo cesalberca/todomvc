@@ -12,7 +12,7 @@ pipeline {
 
           dir('src/webapp') {
             sh 'npm install'
-            sh 'npm start &'
+            sh 'nohup npm start &> todomvc.out &'
           }
 
           sh './gradlew clean test'
