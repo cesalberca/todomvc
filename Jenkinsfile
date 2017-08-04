@@ -11,9 +11,8 @@ pipeline {
           sh 'node -v'
 
           dir('src/webapp') {
-            sh 'ls'
             sh 'npm install'
-            sh 'nohup npm start &'
+            sh 'npm start &'
           }
 
           sh './gradlew clean test'
