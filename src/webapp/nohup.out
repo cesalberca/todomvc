@@ -1,7 +1,0 @@
-
-> todomvc@0.0.0 start /Users/calberca/Workspace/todomvc/src/webapp
-> node ./starter/www
-
-3000
-'192.168.168.171'
-{ address: '::', family: 'IPv6', port: 3000 }

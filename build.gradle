@@ -30,6 +30,7 @@ compileTestJava {
 
 dependencies {
     compile "org.seleniumhq.selenium:selenium-support:$seleniumDriverVersion"
+    compile "org.seleniumhq.selenium:selenium-server:$seleniumDriverVersion"
     compile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumDriverVersion"
     compile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumDriverVersion"
 

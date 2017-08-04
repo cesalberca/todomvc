@@ -1,9 +1,9 @@
 package com.autentia.training.selenium.todomvc.main;
 
-import com.autentia.training.selenium.todomvc.drivers.Browser;
-import com.autentia.training.selenium.todomvc.drivers.Chrome;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,8 +15,8 @@ class TodoMvcFlowTest {
     @BeforeEach
     void setUp() {
         // Don't try with Firefox as for the moment doubleClick event is not implemented correctly, causing the edit to do test to fail
-        final Browser browser = new Chrome();
-        final WebDriver driver = browser.getDriver();
+        final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        final WebDriver driver = new RemoteWebDriver(capabilities);
 
         page = new TodoMvcPage(driver);
         flow = new TodoMvcFlow(page);
@@ -34,7 +34,6 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @Disabled
     @DisplayName("it should create a new todo")
     void testCreateTodo() {
         flow.createTodo("foo");
@@ -43,7 +42,6 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @Disabled
     @DisplayName("it should edit an already created todo")
     void testEditTodo() {
         // Does not work on Firefox 53 due to an error implemented on geckodriver regarding dbclick event not firing
@@ -56,7 +54,6 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @Disabled
     @DisplayName("it should delete a given todo")
     void testDeleteTodo() {
         flow.createTodo("foo");
@@ -66,7 +63,6 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @Disabled
     @DisplayName("it should complete a given todo ")
     void testCompleteTodo() {
         flow.createTodo("foo");
@@ -82,7 +78,6 @@ class TodoMvcFlowTest {
     class FilterTodosTest {
 
         @Test
-        @Disabled
         @DisplayName("it should filter active todos")
         void testFilterActiveTodos() {
             flow.createTodo("foo");
@@ -95,7 +90,6 @@ class TodoMvcFlowTest {
         }
 
         @Test
-        @Disabled
         @DisplayName("it should filter completed todos")
         void testFilterCompletedTodos() {
             flow.createTodo("foo");
@@ -110,7 +104,6 @@ class TodoMvcFlowTest {
     }
 
     @Test
-    @Disabled
     @DisplayName("it should clear completed todos")
     void testClearCompletedTodos() {
         flow.createTodo("foo");
