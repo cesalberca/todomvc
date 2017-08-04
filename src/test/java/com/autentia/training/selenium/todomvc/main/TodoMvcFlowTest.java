@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TodoMvcFlowTest {
@@ -13,10 +16,10 @@ class TodoMvcFlowTest {
     private TodoMvcPage page;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws MalformedURLException {
         // Don't try with Firefox as for the moment doubleClick event is not implemented correctly, causing the edit to do test to fail
         final DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        final WebDriver driver = new RemoteWebDriver(capabilities);
+        final WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
 
         page = new TodoMvcPage(driver);
         flow = new TodoMvcFlow(page);
