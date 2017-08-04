@@ -12,7 +12,13 @@ pipeline {
 
           dir('src/webapp') {
             sh 'npm install'
-            sh 'npm start'
+            sh 'nohup npm start &> todomvc.out &'
+            
+            script{
+              withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                sh "nohup java -jar test-0.0.1-SNAPSHOT.war &"
+              }
+            }
           }
 
           sh './gradlew clean test'
