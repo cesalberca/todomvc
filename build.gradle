@@ -11,24 +11,18 @@ buildscript {
     ext.junitPlatformVersion = '1.0.0-M4'
     ext.junitJupiterVersion = '5.0.0-M4'
     ext.seleniumDriverVersion = '3.4.0'
-    ext.nodePluginVersion = '1.2.0'
 
     repositories {
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
     }
 
     dependencies {
         classpath "org.junit.platform:junit-platform-gradle-plugin:$junitPlatformVersion"
-        classpath "com.moowork.gradle:gradle-node-plugin:$nodePluginVersion"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'org.junit.platform.gradle.plugin'
-apply plugin: 'com.moowork.node'
 
 compileTestJava {
     sourceCompatibility = 1.8
@@ -46,8 +40,4 @@ dependencies {
 
     testCompile "junit:junit:$junit4Version"
     testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-}
-
-task launchWeb(type: NodeTask) {
-    script = file('src/webapp/bin/www.js')
 }
