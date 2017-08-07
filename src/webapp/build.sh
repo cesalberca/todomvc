@@ -1,3 +1,4 @@
 #!/usr/bin/bash
-node ./bin/www.js
+echo "Attempting to run server"
+node ./bin/www.js &
 echo "Server running..."
