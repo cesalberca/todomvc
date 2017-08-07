@@ -2,6 +2,11 @@
 
 pipeline {
   agent any
+
+  environment {
+    BUILD_ID = 'dontKillMe'
+  }
+
   stages {
     stage('Initialize') {
       steps {
@@ -13,7 +18,8 @@ pipeline {
           dir('src/webapp') {
             sh 'npm install'
             sh 'chmod +x build.sh'
-            sh 'BUILD_ID=dontKillMe ./build.sh &'
+            sh 'env'
+            sh './build.sh &'
           }
 
           sh './gradlew clean test'
