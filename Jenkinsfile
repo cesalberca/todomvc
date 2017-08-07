@@ -13,7 +13,7 @@ pipeline {
 
             dir('src/webapp') {
               sh 'npm install'
-              sh 'nohup npm start &'
+              sh 'BUILD_ID=dontKillMe nohup npm start &'
             }
 
             sh './gradlew clean test'
