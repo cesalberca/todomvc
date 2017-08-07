@@ -3,10 +3,6 @@
 pipeline {
   agent any
 
-  environment {
-    BUILD_ID = 'dontKillMe'
-  }
-
   stages {
     stage('Initialize') {
       steps {
@@ -18,7 +14,6 @@ pipeline {
             sh './gradlew clean test'
           }
         )
-
       }
     }
     stage('Clean up') {
