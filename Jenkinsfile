@@ -4,16 +4,9 @@ pipeline {
   agent any
 
   stages {
-    stage('Initialize') {
+    stage('Test') {
       steps {
-        parallel(
-          launch: {
-            sh './gradlew launchWeb'
-          },
-          test: {
-            sh './gradlew clean test'
-          }
-        )
+        sh './gradlew clean test'
       }
     }
     stage('Clean up') {
