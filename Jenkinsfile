@@ -13,7 +13,7 @@ pipeline {
 
             dir('src/webapp') {
               sh 'npm install'
-              sh 'nohup npm start &> todomvc.out &'
+              sh 'nohup npm start > todomvc.out &'
             }
           }
         }
