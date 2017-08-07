@@ -4,8 +4,8 @@ pipeline {
   agent any
   stages {
     stage('Initialize') {
-      lock('webapp') {
-        steps {
+      steps {
+        lock('webapp') {
           nodejs(nodeJSInstallationName: 'node:8.2.0') {
             sh 'echo $PATH'
             sh 'npm -v'
