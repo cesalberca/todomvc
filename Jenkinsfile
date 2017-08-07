@@ -5,19 +5,17 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        lock('webapp') {
-          nodejs(nodeJSInstallationName: 'node:8.2.0') {
-            sh 'echo $PATH'
-            sh 'npm -v'
-            sh 'node -v'
+        nodejs(nodeJSInstallationName: 'node:8.2.0') {
+          sh 'echo $PATH'
+          sh 'npm -v'
+          sh 'node -v'
 
-            dir('src/webapp') {
-              sh 'npm install'
-              sh 'BUILD_ID=dontKillMe nohup npm start &'
-            }
-
-            sh './gradlew clean test'
+          dir('src/webapp') {
+            sh 'npm install'
+            sh 'BUILD_ID=dontKillMe npm start &'
           }
+
+          sh './gradlew clean test'
         }
       }
     }
