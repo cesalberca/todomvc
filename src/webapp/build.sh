@@ -1,2 +1,3 @@
 #!/usr/bin/bash
-node ./bin/www
+node ./bin/www.js
+echo "Server running..."
