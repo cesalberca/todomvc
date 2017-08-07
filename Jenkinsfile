@@ -4,8 +4,8 @@ pipeline {
   agent any
   stages {
     stage('Initialize') {
-      steps {
-        lock('webapp') {
+      lock('webapp') {
+        steps {
           nodejs(nodeJSInstallationName: 'node:8.2.0') {
             sh 'echo $PATH'
             sh 'npm -v'
@@ -20,7 +20,9 @@ pipeline {
       }
     }
     stage('Test') {
-      sh './gradlew clean test'
+      steps {
+        sh './gradlew clean test'
+      }
     }
     stage('Clean up') {
       steps {
