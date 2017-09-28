@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.autentia.training.selenium.todomvc.utils.Config.BASE_URL;
+import static com.autentia.training.selenium.todomvc.config.Config.BASE_URL;
 
 public class BasePage {
 

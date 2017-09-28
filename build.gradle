@@ -1,43 +1,81 @@
-group 'com.autentia.training'
-version '1.0-SNAPSHOT'
+group "com.autentia.training"
+version "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
 buildscript {
-    ext.junit4Version = '4.12'
-    ext.junitVintageVersion = '4.12.0-M4'
-    ext.junitPlatformVersion = '1.0.0-M4'
-    ext.junitJupiterVersion = '5.0.0-M4'
-    ext.seleniumDriverVersion = '3.4.0'
+    ext.junit4Version = "4.12"
+    ext.junitVintageVersion = "4.12.0"
+    ext.junitPlatformVersion = "1.0.0"
+    ext.junitJupiterVersion = "5.0.0"
+    ext.seleniumVersion = "3.5.3"
 
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url "http://dl.bintray.com/vermeulen-mp/gradle-plugins"
+        }
     }
 
     dependencies {
         classpath "org.junit.platform:junit-platform-gradle-plugin:$junitPlatformVersion"
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+        classpath "com.wiredforcode:gradle-spawn-plugin:0.8.1"
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: "java"
+apply plugin: "org.junit.platform.gradle.plugin"
+apply plugin: "com.moowork.node"
+apply plugin: "com.wiredforcode.spawn"
 
 compileTestJava {
     sourceCompatibility = 1.8
 }
 
+node {
+    version = "6.11.3"
+    download = true
+    nodeModulesDir = file("src/app")
+}
+
+// Server should never start if the npm dependencies are not installed
+task startServer(type: SpawnProcessTask, dependsOn: "npmInstall") {
+    command "node ./src/app/bin/www.js"
+    ready "Started express"
+}
+
+// Pass from the Gradle JVM to Java's JVM the system properties
+junitPlatformTest {
+    systemProperties project.properties.subMap(["env", "debug", "browser", "hub.url", "base.url"])
+}
+
+// Important to start the tests only and only if the server has started
+junitPlatformTest.dependsOn startServer
+
+// Lastly, regardless of the success or not of the tests the server should be shutdown
+junitPlatformTest.finalizedBy killProcess {
+    doLast {
+        println "Stopped express"
+    }
+}
+
 dependencies {
-    compile "org.seleniumhq.selenium:selenium-support:$seleniumDriverVersion"
-    compile "org.seleniumhq.selenium:selenium-server:$seleniumDriverVersion"
-    compile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumDriverVersion"
-    compile "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumDriverVersion"
+    compile "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    compile "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
 
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-    testRuntimeOnly "org.junit.platform:junit-platform-launcher:$junitPlatformVersion"
-    testRuntimeOnly "org.junit.platform:junit-platform-runner:$junitPlatformVersion"
+    testCompile("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 
-    testCompile "junit:junit:$junit4Version"
-    testCompile "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testCompile("junit:junit:$junit4Version")
+    testRuntime("org.junit.vintage:junit-vintage-engine:$junitVintageVersion")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.2"
 }

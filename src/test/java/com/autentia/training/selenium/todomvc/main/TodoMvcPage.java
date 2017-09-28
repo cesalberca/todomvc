@@ -23,7 +23,7 @@ final class TodoMvcPage extends BasePage {
     private final By filterCompletedButton = By.cssSelector("a[href=\"#/completed\"]");
     private final By filterClearCompletedButton = By.cssSelector(".clear-completed");
 
-    private WebElement activeTodoEditInput;
+    private WebElement activeTodoEdit;
     private WebElement activeTodoDeleteButton;
 
     TodoMvcPage(WebDriver driver) {
@@ -84,27 +84,27 @@ final class TodoMvcPage extends BasePage {
 
         action.moveToElement(todoToBeEdited).doubleClick().perform();
 
-        activeTodoEditInput = findActiveTodoEditInput(index);
+        activeTodoEdit = findActiveTodoEditInput(index);
         return this;
     }
 
     TodoMvcPage clearTodo() {
-        // Cache the length, as Selenium looks for the DOM
-        final int length = activeTodoEditInput.getAttribute("value").length();
+        // Cache the length, as Selenium looks for the DOM on each iteration
+        final int length = activeTodoEdit.getAttribute("value").length();
         for (int i = 0; i < length; i++) {
-            activeTodoEditInput.sendKeys(Keys.BACK_SPACE);
+            activeTodoEdit.sendKeys(Keys.BACK_SPACE);
         }
         return this;
     }
 
     TodoMvcPage editTodo(String newName) {
-        activeTodoEditInput.sendKeys(newName);
+        activeTodoEdit.sendKeys(newName);
         return this;
     }
 
     TodoMvcPage submitEditedTodo() {
-        activeTodoEditInput.sendKeys(Keys.ENTER);
-        activeTodoEditInput = null;
+        activeTodoEdit.sendKeys(Keys.ENTER);
+        activeTodoEdit = null;
         return this;
     }
 

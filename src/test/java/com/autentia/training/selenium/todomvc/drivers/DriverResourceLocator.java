@@ -6,14 +6,9 @@ import java.net.URL;
 class DriverResourceLocator {
 
     private static final String CHROME_DRIVER_NAME = "chromedriver";
-    private static final String FIREFOX_DRIVER_NAME = "geckodriver";
 
     String getChromeDriverLocation() {
         return getDriverFromResources(CHROME_DRIVER_NAME);
-    }
-
-    String getFirefoxDriverLocation() {
-        return getDriverFromResources(FIREFOX_DRIVER_NAME);
     }
 
     private String getDriverFromResources(String driverName) {

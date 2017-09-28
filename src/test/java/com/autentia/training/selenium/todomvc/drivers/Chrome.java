@@ -4,12 +4,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static com.autentia.training.selenium.todomvc.config.Config.DEBUG;
+
 public final class Chrome extends Browser {
 
     public Chrome() {
         System.setProperty("webdriver.chrome.driver", new DriverResourceLocator().getChromeDriverLocation());
+
         final ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+
+        if (DEBUG) {
+            chromeOptions.addArguments("--headless");
+        }
+
         setDriver(new ChromeDriver(chromeOptions));
     }
 
