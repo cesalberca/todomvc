@@ -41,13 +41,12 @@ compileTestJava {
 node {
     version = "6.11.3"
     download = true
-    nodeModulesDir = file("${project.projectDir}/src/app")
-    workDir = file("${project.projectDir}/src/app")
+    nodeModulesDir = file("src/app")
 }
 
 // Server should never start if the npm dependencies are not installed
 task startServer(type: SpawnProcessTask, dependsOn: "npmInstall") {
-    command "echo \$PATH; node -v; node src/app/bin/www.js"
+    command "node ./src/app/bin/www.js"
     ready "Started express"
 }
 
