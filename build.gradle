@@ -42,6 +42,7 @@ node {
     version = "6.11.3"
     download = true
     nodeModulesDir = file("src/app")
+    workingDir = file("src/app")
 }
 
 // Server should never start if the npm dependencies are not installed
