@@ -6,8 +6,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'ls'
-        sh './gradlew npmInstall'
+        sh './gradlew nodeSetup'
         sh 'node -v'
         sh './gradlew -P env="prod" clean test'
       }
