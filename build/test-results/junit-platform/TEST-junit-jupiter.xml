@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JUnit Jupiter" tests="8" skipped="0" failures="0" errors="0" time="57.783" hostname="macbook-calberca.local" timestamp="2017-09-29T16:13:47">
+<testsuite name="JUnit Jupiter" tests="8" skipped="0" failures="0" errors="0" time="63.521" hostname="macbook-calberca.local" timestamp="2017-09-29T16:43:03">
 <properties>
 <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
 <property name="file.encoding" value="UTF-8"/>
@@ -60,49 +60,49 @@
 <property name="user.variant" value=""/>
 <property name="webdriver.chrome.driver" value="/Users/calberca/Tmp/todomvc/build/resources/test/chromedriver"/>
 </properties>
-<testcase name="testClearCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="5.893">
+<testcase name="testClearCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="7.111">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testClearCompletedTodos()]
 display-name: it should clear completed todos
 ]]></system-out>
 </testcase>
-<testcase name="testEditTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="3.773">
+<testcase name="testEditTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="7.101">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testEditTodo()]
 display-name: it should edit an already created todo
 ]]></system-out>
 </testcase>
-<testcase name="testLoadingCapabilities()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="4.219">
+<testcase name="testLoadingCapabilities()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="3.535">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testLoadingCapabilities()]
 display-name: it should load the page correctly
 ]]></system-out>
 </testcase>
-<testcase name="testCompleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="14.609">
+<testcase name="testCompleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="5.36">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testCompleteTodo()]
 display-name: it should complete a given todo
 ]]></system-out>
 </testcase>
-<testcase name="testCreateTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="16.571">
+<testcase name="testCreateTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="10.639">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testCreateTodo()]
 display-name: it should create a new todo
 ]]></system-out>
 </testcase>
-<testcase name="testDeleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="3.681">
+<testcase name="testDeleteTodo()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest" time="15.145">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[method:testDeleteTodo()]
 display-name: it should delete a given todo
 ]]></system-out>
 </testcase>
-<testcase name="testFilterCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="4.734">
+<testcase name="testFilterCompletedTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="7.502">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[nested-class:FilterTodosTest]/[method:testFilterCompletedTodos()]
 display-name: it should filter completed todos
 ]]></system-out>
 </testcase>
-<testcase name="testFilterActiveTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="4.186">
+<testcase name="testFilterActiveTodos()" classname="com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest$FilterTodosTest" time="7.031">
 <system-out><![CDATA[
 unique-id: [engine:junit-jupiter]/[class:com.autentia.training.selenium.todomvc.main.TodoMvcFlowTest]/[nested-class:FilterTodosTest]/[method:testFilterActiveTodos()]
 display-name: it should filter active todos

@@ -56,8 +56,20 @@ junitPlatformTest {
     systemProperties project.properties.subMap(["env", "debug", "browser", "hub.url", "base.url"])
 }
 
+task sanityCheck(type: Exec) {
+    doFirst {
+        println "PATH: "
+        commandLine "echo", "$PATH"
+        println "Node version: "
+        commandLine "node", "-v"
+        println "NPM version: "
+        commandLine "npm", "-v"
+    }
+}
+
 // Important to start the tests only and only if the server has started
-junitPlatformTest.dependsOn startServer
+junitPlatformTest.dependsOn startServer, sanityCheck
+
 
 // Lastly, regardless of the success or not of the tests the server should be shutdown
 junitPlatformTest.finalizedBy killProcess {
