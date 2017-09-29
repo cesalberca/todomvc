@@ -41,7 +41,8 @@ compileTestJava {
 node {
     version = "6.11.3"
     download = true
-    nodeModulesDir = file("src/app")
+    nodeModulesDir = file("$project.projectDir/src/app/node_modules")
+    workDir = file("$project.projectDir/src/app/nodejs")
 }
 
 // Server should never start if the npm dependencies are not installed
