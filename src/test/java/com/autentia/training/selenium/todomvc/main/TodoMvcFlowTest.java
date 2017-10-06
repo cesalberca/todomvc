@@ -27,7 +27,7 @@ class TodoMvcFlowTest {
     @Test
     @DisplayName("it should load the page correctly")
     void testLoadingCapabilities() {
-        assertEquals("TodoMVC", page.getTitle());
+        assertEquals("VanillaJS • TodoMVC", page.getTitle());
     }
 
     @Test

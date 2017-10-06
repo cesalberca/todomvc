@@ -6,76 +6,29 @@ repositories {
 }
 
 buildscript {
-    ext.junit4Version = "4.12"
-    ext.junitVintageVersion = "4.12.0"
     ext.junitPlatformVersion = "1.0.0"
     ext.junitJupiterVersion = "5.0.0"
     ext.seleniumVersion = "3.5.3"
 
     repositories {
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        maven {
-            url "http://dl.bintray.com/vermeulen-mp/gradle-plugins"
-        }
     }
 
     dependencies {
         classpath "org.junit.platform:junit-platform-gradle-plugin:$junitPlatformVersion"
-        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
-        classpath "com.wiredforcode:gradle-spawn-plugin:0.8.1"
     }
 }
 
 apply plugin: "java"
 apply plugin: "org.junit.platform.gradle.plugin"
-apply plugin: "com.moowork.node"
-apply plugin: "com.wiredforcode.spawn"
 
 compileTestJava {
     sourceCompatibility = 1.8
 }
 
-node {
-    version = "6.11.3"
-    download = true
-    nodeModulesDir = file("$project.projectDir/src/app/node_modules")
-    workDir = file("$project.projectDir/src/app/nodejs")
-}
-
-// Server should never start if the npm dependencies are not installed
-task startServer(type: SpawnProcessTask, dependsOn: "npmInstall") {
-    command "node ./src/app/bin/www.js"
-    ready "Started express"
-}
-
 // Pass from the Gradle JVM to Java's JVM the system properties
 junitPlatformTest {
     systemProperties project.properties.subMap(["env", "debug", "browser", "hub.url", "base.url"])
-}
-
-task sanityCheck(type: Exec) {
-    doFirst {
-        println "PATH: "
-        commandLine "echo", "$PATH"
-        println "Node version: "
-        commandLine "node", "-v"
-        println "NPM version: "
-        commandLine "npm", "-v"
-    }
-}
-
-// Important to start the tests only and only if the server has started
-junitPlatformTest.dependsOn startServer, sanityCheck
-
-
-// Lastly, regardless of the success or not of the tests the server should be shutdown
-junitPlatformTest.finalizedBy killProcess {
-    doLast {
-        println "Stopped express"
-    }
 }
 
 dependencies {
@@ -84,9 +37,7 @@ dependencies {
 
     testCompile("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
-
-    testCompile("junit:junit:$junit4Version")
-    testRuntime("org.junit.vintage:junit-vintage-engine:$junitVintageVersion")
+    testRuntime("org.junit.platform:junit-platform-runner:$junitPlatformVersion")
 }
 
 task wrapper(type: Wrapper) {

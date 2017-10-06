@@ -5,7 +5,7 @@ import java.net.URL;
 
 class DriverResourceLocator {
 
-    private static final String CHROME_DRIVER_NAME = "chromedriver";
+    private static final String CHROME_DRIVER_NAME = "chromedriver-mac";
 
     String getChromeDriverLocation() {
         return getDriverFromResources(CHROME_DRIVER_NAME);
