@@ -13,11 +13,15 @@ public final class Chrome extends Browser {
 
         final ChromeOptions chromeOptions = new ChromeOptions();
 
-        if (DEBUG) {
+        if (!DEBUG) {
             chromeOptions.addArguments("--headless");
         }
 
         setDriver(new ChromeDriver(chromeOptions));
+
+        if (DEBUG) {
+            this.focus();
+        }
     }
 
     @Override
