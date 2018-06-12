@@ -13,3 +13,5 @@ Al ejecutar la tarea de test de Gradle, Selenium levantará un Chrome usando el 
 * Borrar las tareas completadas
 
 ![Todomvc Tests](./todomvc-tests.gif)
+
+Last built: 2018-06-18 20:00
